@@ -15,16 +15,51 @@ class App extends React.Component {
   }
   // componentDidUpdate()
   stateUpdater = (value) => {
-    this.setState({
-      [value]: this.state[value] + 1
-    })
+    if(value === 'foul') {
+      if(this.state.strike < 2) {
+        this.setState({
+          strike: this.state.strike + 1
+        })
+      }
+    }
+    if(value === 'strike') {
+      if(this.state.strike < 2) {
+        this.setState({
+          strike: this.state.strike + 1
+        })
+      } else {
+        this.setState({
+          strike: 0,
+          ball: 0
+        })
+      }
+    }
+    if(value === 'ball') {
+      if(this.state.ball < 3) {
+        this.setState({
+          ball: this.state.ball + 1
+        })
+      } else {
+        this.setState({
+          strike: 0,
+          ball: 0
+        })
+      }
+    }
+    if(value === 'hit') {
+      this.setState({
+        strike: 0,
+        ball: 0,
+        hit: this.state.hit + 1
+      })
+    }
   }
 
   render() {
     console.log(this.state)
     return (
       <div className="App">
-        <Display />
+        <Display stateValues={this.state} />
         <Dashboard stateUpdater={this.stateUpdater} />
       </div>
     );
