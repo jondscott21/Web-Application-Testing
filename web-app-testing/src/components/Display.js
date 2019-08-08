@@ -2,13 +2,11 @@ import React from 'react';
 
 function Display({stateValues}) {
     const {strike, ball, foul, hit} = stateValues
-    // console.log(props);
     return(
         <div>
-            <p>Strikes: {strike}</p>
-            <p>Balls: {ball}</p>
-            <p>Hits: {hit}</p>
-            <p></p>
+            <p data-testid="strike">Strikes: {strike}</p>
+            <p data-testid="ball">Balls: {ball}</p>
+            <p data-testid="hit">Hits: {hit}</p>
         </div>
     )
 }

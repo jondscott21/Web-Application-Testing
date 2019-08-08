@@ -13,7 +13,6 @@ class App extends React.Component {
       hit: 0
     }
   }
-  // componentDidUpdate()
   stateUpdater = (value) => {
     if(value === 'foul') {
       if(this.state.strike < 2) {

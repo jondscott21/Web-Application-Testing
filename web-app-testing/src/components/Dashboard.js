@@ -6,11 +6,10 @@ function Dashboard({stateUpdater}) {
     }
     return(
         <div>
-            <h1>Dashboard</h1>
-            <button onClick={() => handleButtonClick('strike')}>Strike</button>
-            <button onClick={() => handleButtonClick('ball')}>Ball</button>
-            <button onClick={() => handleButtonClick('foul')}>Foul</button>
-            <button onClick={() => handleButtonClick('hit')}>Hit</button>
+            <button data-testid="strike-button" onClick={() => handleButtonClick('strike')}>Strike</button>
+            <button data-testid="ball-button" onClick={() => handleButtonClick('ball')}>Ball</button>
+            <button data-testid="foul-button" onClick={() => handleButtonClick('foul')}>Foul</button>
+            <button data-testid="hit-button" onClick={() => handleButtonClick('hit')}>Hit</button>
         </div>
     );
     
